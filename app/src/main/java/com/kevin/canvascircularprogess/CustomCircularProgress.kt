@@ -1,6 +1,5 @@
 package com.kevin.canvascircularprogess
 
-import android.animation.FloatEvaluator
 import android.animation.ValueAnimator
 import android.content.Context
 import android.content.res.Resources
@@ -8,7 +7,6 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
-import android.view.animation.DecelerateInterpolator
 import androidx.core.content.ContextCompat
 import kotlin.math.*
 
@@ -155,7 +153,7 @@ class CustomCircularProgress constructor(context: Context, attrs: AttributeSet?)
                 verticalCenter + radiusShadowCircle
             )
         }
-        gradient = SweepGradient(horizontalCenter,verticalCenter,colors,positions)
+        gradient = SweepGradient(horizontalCenter, verticalCenter, colors, positions)
         innerArcPaint.shader = gradient
         canvas?.let {
             //draw shadow arc
@@ -193,8 +191,8 @@ class CustomCircularProgress constructor(context: Context, attrs: AttributeSet?)
     private fun dpToPx(dp: Float) =
         ceil(dp * Resources.getSystem().displayMetrics.density.toDouble()).toInt()
 
-     fun setProgress(progress: Int) {
-         progressAnimator =
+    fun setProgress(progress: Int) {
+        progressAnimator =
             ValueAnimator().apply {
                 interpolator = AccelerateDecelerateInterpolator()
                 setObjectValues(mProgress, progress)
@@ -206,6 +204,7 @@ class CustomCircularProgress constructor(context: Context, attrs: AttributeSet?)
                 }
             }
         progressAnimator.start()
+        requestLayout()
     }
 
     fun setMaxProgress(maxProgress: Int) {

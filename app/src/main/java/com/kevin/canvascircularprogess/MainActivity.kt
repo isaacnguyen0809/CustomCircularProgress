@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding.circularProgress.setMaxProgress(100)
         binding.seekBar.setOnSeekBarChangeListener(object  : SeekBar.OnSeekBarChangeListener{
             override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
-                binding.circularProgress.setProgress(p1.toFloat())
+                binding.circularProgress.setProgress(p1)
             }
 
             override fun onStartTrackingTouch(p0: SeekBar?) {
