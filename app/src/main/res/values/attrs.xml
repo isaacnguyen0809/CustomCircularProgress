@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomCircularProgress">
+        <attr name="progress" format="float" />
+        <attr name="progressColor" format="color" />
+        <attr name="circleBackgroundColor" format="color" />
+        <attr name="progressBarThickness" format="dimension" />
+        <attr name="maxProgress" format="integer" />
+    </declare-styleable>
+</resources>
