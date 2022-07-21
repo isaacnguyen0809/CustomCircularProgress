@@ -193,9 +193,9 @@ class CustomCircularProgress constructor(context: Context, attrs: AttributeSet?)
     private fun dpToPx(dp: Float) =
         ceil(dp * Resources.getSystem().displayMetrics.density.toDouble()).toInt()
 
-    fun setProgress(progress: Float) {
-        progressAnimator = ValueAnimator().apply {
-            progressAnimator = ValueAnimator().apply {
+     fun setProgress(progress: Int) {
+         progressAnimator =
+            ValueAnimator().apply {
                 interpolator = AccelerateDecelerateInterpolator()
                 setObjectValues(mProgress, progress)
                 duration = 1000
@@ -205,9 +205,7 @@ class CustomCircularProgress constructor(context: Context, attrs: AttributeSet?)
                     invalidate()
                 }
             }
-            progressAnimator.start()
-            requestLayout()
-        }
+        progressAnimator.start()
     }
 
     fun setMaxProgress(maxProgress: Int) {
